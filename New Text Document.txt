@@ -1,0 +1,60 @@
+//This command is used to allow the port 27017 to be connected externally by //MongoDB Compass
+docker run --name mongoDB -p 27017:27017 -d  mongo
+
+//API to insert Movie data and JSON for post data
+http://localhost:5003/api/movies
+{
+    "title": "Taali",
+    "year": "2023",
+    "Summary": "About the transgenders and their rights",
+    "actors": ["Sushmita Sen"]
+}
+
+//Get api call to get all the movies
+http://localhost:5003/api/movies
+
+//Get api call to get single movie
+http://localhost:5003/api/movies/652b8efa2f551d3af8323f08
+
+
+//Put api call to update the single movie
+http://localhost:5003/api/movies/652b8efa2f551d3af8323f08
+{
+        "id": "652b8efa2f551d3af8323f08",
+        "title": "OMG Part 1",
+        "year": 2015,
+        "summary": "About the god and how  it saves and protects you",
+        "actors": [
+            "Akshay Kumar",
+            "Pankaj Tripathi"
+        ]
+    }
+
+
+//Delete api call to delete a movie
+http://localhost:5003/api/movies/652b8efa2f551d3af8323f08
+
+
+
+//All movies returned
+[
+    {
+        "id": "652b8efa2f551d3af8323f08",
+        "title": "OMG Part 1",
+        "year": 2015,
+        "summary": "About the god and how  it saves and protects you",
+        "actors": [
+            "Akshay Kumar",
+            "Pankaj Tripathi"
+        ]
+    },
+    {
+        "id": "652b8f8d2f551d3af8323f09",
+        "title": "Taali",
+        "year": 2023,
+        "summary": "About the transgenders and their rights",
+        "actors": [
+            "Sushmita Sen"
+        ]
+    }
+]
